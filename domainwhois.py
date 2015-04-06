@@ -11,7 +11,7 @@ def lookUp(domainName, writeToFile):
 		writeToFile.write("Exception caught for "+domainName+"\n")
 
 def retrieveParams():
-	paramsList = [0,0,0,0]
+	paramsList = [None,None,None,None]
     	try:
         	opts, args = getopt.getopt(sys.argv[1:], "t:l:o:s:", ["tld=", "list=", "output=", "start="])
     	except getopt.GetoptError as err:

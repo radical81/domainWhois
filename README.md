@@ -8,3 +8,5 @@ $ python domainwhois.py -t <domain tld> -l <text file to read> -o <text file to 
 
 For example, to look up .com domains starting with 'b' from a list of English words and write the available ones to available.txt,
 $ python domainwhois.py -t com -l wordsEn.txt -o available.txt -s b
+
+-s is an optional parameter.
