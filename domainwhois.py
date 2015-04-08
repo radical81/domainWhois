@@ -4,8 +4,8 @@ def lookUp(domainName, writeToFile):
 	print "Looking up whois information for " + domainName + "..."
 	try:
 		shellResult = subprocess.check_output(['whois', domainName])
-		filterString = 'No match for "'+domainName+'".'
-		if shellResult.find(filterString) > -1 : 
+		filterString = ['No match for "'+domainName+'".','Domain not found.','NOT FOUND']
+		if any(x in shellResult for x in filterString) : 
 			writeToFile.write(domainName+"\n")
 	except:
 		writeToFile.write("Exception caught for "+domainName+"\n")
