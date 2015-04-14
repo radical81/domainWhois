@@ -4,8 +4,9 @@ def lookUp(domainName, writeToFile):
 	print "Looking up whois information for " + domainName + "..."
 	try:
 		shellResult = subprocess.check_output(['whois', domainName])
-		filterString = ['No match for "'+domainName+'".','Domain not found.','NOT FOUND']
-		if any(x in shellResult for x in filterString) : 
+#		filterString = ['No match for "'+domainName+'".','Domain not found.','NOT FOUND']
+#		if any(x in shellResult for x in filterString) : 
+		if "No match for" in shellResult:
 			writeToFile.write(domainName+"\n")
 	except subprocess.CalledProcessError:
 		print "whois was exited"
