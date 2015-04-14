@@ -3,7 +3,8 @@ import subprocess, getopt, sys
 def lookUp(domainName, writeToFile):
 	print "Looking up whois information for " + domainName + "..."
 	try:
-		shellResult = subprocess.check_output(['whois', domainName])
+		proc = subprocess.Popen(['whois', domainName], stdout=subprocess.PIPE)
+		shellResult = proc.stdout.read()
 #		filterString = ['No match for "'+domainName+'".','Domain not found.','NOT FOUND']
 #		if any(x in shellResult for x in filterString) : 
 		if "No match for" in shellResult:
