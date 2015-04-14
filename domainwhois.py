@@ -7,7 +7,8 @@ def lookUp(domainName, writeToFile):
 		filterString = ['No match for "'+domainName+'".','Domain not found.','NOT FOUND']
 		if any(x in shellResult for x in filterString) : 
 			writeToFile.write(domainName+"\n")
-	except:
+	except subprocess.CalledProcessError:
+		print "whois was exited"
 		writeToFile.write("Exception caught for "+domainName+"\n")
 
 def retrieveParams():
