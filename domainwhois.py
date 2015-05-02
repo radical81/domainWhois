@@ -1,10 +1,25 @@
-import subprocess, getopt, sys
+import datetime, subprocess, getopt, sys, re
 
+def isRedemption(expDate):
+	expDate = datetime.datetime.strptime(expDate.lower(), '%d-%b-%Y')
+	today = datetime.datetime.today()
+	margin = datetime.timedelta(days = 40)
+	if today - expDate >= margin:
+		return True
+
+	
 def lookUp(domainName, writeToFile):
 	print "Looking up whois information for " + domainName + "..."
 	try:
 		proc = subprocess.Popen(['whois', domainName], stdout=subprocess.PIPE)
 		shellResult = proc.stdout.read()
+		if "Expiration Date" in shellResult:
+			m = re.search('Expiration Date: (.+)', shellResult)
+			if m:
+				expDate = m.group(1)
+				if isRedemption(expDate) == True:
+					writeToFile.write(domainName + " expired on "+ expDate)
+				
 		filterString = ['No match for "'+domainName+'".','Domain not found.','Not found:','NOT FOUND']
 		if any(x in shellResult for x in filterString) : 
 			writeToFile.write(domainName + " " + x + "\n")
