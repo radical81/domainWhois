@@ -7,10 +7,8 @@ def lookUp(domainName, writeToFile):
 		shellResult = proc.stdout.read()
 		filterString = ['No match for "'+domainName+'".','Domain not found.','Not found:']
 		if any(x in shellResult for x in filterString) : 
-		#if "No match for" in shellResult:
-			writeToFile.write(domainName+"\n")
+			writeToFile.write(domainName + " " + x + "\n")
 	except subprocess.CalledProcessError:
-		print "whois was exited"
 		writeToFile.write("Exception caught for "+domainName+"\n")
 
 def retrieveParams():
@@ -55,7 +53,6 @@ def main():
     		suffix = endCat
 	tld = tld.upper()
 	writeToFile = open(outputFile,'a')
-	writeToFile.write("\nAvailable domains:\n")
 
 	if(startsWith != None):
 		dictionary = subprocess.check_output(['grep', '^'+startsWith, wordsList]).split('\n')
