@@ -5,7 +5,7 @@ def lookUp(domainName, writeToFile):
 	try:
 		proc = subprocess.Popen(['whois', domainName], stdout=subprocess.PIPE)
 		shellResult = proc.stdout.read()
-		filterString = ['No match for "'+domainName+'".','Domain not found.','Not found:']
+		filterString = ['No match for "'+domainName+'".','Domain not found.','Not found:','NOT FOUND']
 		if any(x in shellResult for x in filterString) : 
 			writeToFile.write(domainName + " " + x + "\n")
 	except subprocess.CalledProcessError:
