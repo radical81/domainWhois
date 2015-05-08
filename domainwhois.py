@@ -23,7 +23,7 @@ def lookUp(domainName, writeToFile):
 			if m:
 				expDate = m.group(1)
 				if isRedemption(expDate) == True:
-					writeToFile.write(domainName + " expired on "+ expDate + "DROPS on: " + generateDropDate(expDate) + "\n")
+					writeToFile.write(domainName + " expired on "+ expDate + " DROPS on: " + generateDropDate(expDate) + "\n")
 				
 		filterString = ['No match for "'+domainName+'".','Domain not found.','Not found:','NOT FOUND']
 		if any(x in shellResult for x in filterString) : 
