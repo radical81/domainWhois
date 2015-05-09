@@ -25,6 +25,8 @@ def lookUp(domainName, writeToFile):
 				if isRedemption(expDate) == True:
 					writeToFile.write(domainName + " expired on "+ expDate + " DROPS on: " + generateDropDate(expDate) + "\n")
 				
+		if "pendingDelete" in shellResult:
+			writeToFile.write(domainName + " PENDING DELETE " + "\n")
 		filterString = ['No match for "'+domainName+'".','Domain not found.','Not found:','NOT FOUND']
 		if any(x in shellResult for x in filterString) : 
 			writeToFile.write(domainName + "\n")
