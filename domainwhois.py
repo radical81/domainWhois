@@ -9,7 +9,7 @@ def isRedemption(expDate):
 
 def generateDropDate(expDate):
 	expDate = datetime.datetime.strptime(expDate, '%d-%b-%Y')
-	margin = datetime.timedelta(days = 75)
+	margin = datetime.timedelta(days = 60)
 	dropDate = expDate + margin
 	return dropDate.strftime("%d %b %Y")
 	
