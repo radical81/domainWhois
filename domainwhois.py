@@ -19,7 +19,7 @@ def lookUp(domainName, writeToFile):
 		proc = subprocess.Popen(['whois', domainName], stdout=subprocess.PIPE)
 		shellResult = proc.stdout.read()
 		if "Expiration Date" in shellResult:
-			m = re.search('Expiration Date: (.+)', shellResult)
+			m = re.search('Expiration Date: (.{2}-.{3}-.{4})', shellResult)
 			if m:
 				expDate = m.group(1)
 				if isRedemption(expDate) == True:
