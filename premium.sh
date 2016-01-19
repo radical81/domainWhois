@@ -1,4 +1,10 @@
 cd /opt/lampp/htdocs/domainWhois
+python domainwhois.py -t com -l chinese_names.txt -o chinese_names_com.txt
+if [ -s chinese_names_com.txt ]; then cat chinese_names_com.txt | mail -s "CHINESENAMES.COM" "ralobba@gmail.com"; fi
+rm chinese_names_com.txt
+python domainwhois.py -t com -l female_chinese_names.txt -o female_chinese_names_com.txt
+if [ -s female_chinese_names_com.txt ]; then cat female_chinese_names_com.txt | mail -s "FEMALECHINESENAMES.COM" "ralobba@gmail.com"; fi
+rm female_chinese_names_com.txt
 python domainwhois.py -t com -l twoletters.txt -o ll_com.txt
 if [ -s ll_com.txt ]; then cat ll_com.txt | mail -s "LL.COM" "ralobba@gmail.com"; fi
 rm ll_com.txt
@@ -17,39 +23,9 @@ rm lllll_com.txt
 python domainwhois.py -t com -l cvcv.txt -o cvcv_com.txt
 if [ -s cvcv_com.txt ]; then cat cvcv_com.txt | mail -s "CVCV.COM" "ralobba@gmail.com"; fi
 rm cvcv_com.txt
-python domainwhois.py -t net -l twoletters.txt -o ll_net.txt
-if [ -s ll_net.txt ]; then cat ll_net.txt | mail -s "LL.NET" "ralobba@gmail.com"; fi
-rm ll_net.txt
-python domainwhois.py -t net -l tla.txt -o lll_net.txt
-if [ -s lll_net.txt ]; then cat lll_net.txt | mail -s "LLL.NET" "ralobba@gmail.com"; fi
-rm lll_net.txt
-python domainwhois.py -t net -l numList.txt -o num_net.txt
-if [ -s num_net.txt ]; then cat num_net.txt | mail -s "NNNN.NET" "ralobba@gmail.com"; fi
-rm num_net.txt
-python domainwhois.py -t net -l fourLetter.txt -o llll_net.txt
-if [ -s llll_net.txt ]; then cat llll_net.txt | mail -s "LLLL.NET" "ralobba@gmail.com"; fi
-rm llll_net.txt
-python domainwhois.py -t net -l five_letter.txt -o lllll_net.txt
-if [ -s lllll_net.txt ]; then cat lllll_net.txt | mail -s "LLLLL.NET" "ralobba@gmail.com"; fi
-rm lllll_net.txt
-python domainwhois.py -t net -l cvcv.txt -o cvcv_net.txt
-if [ -s cvcv_net.txt ]; then cat cvcv_net.txt | mail -s "CVCV.NET" "ralobba@gmail.com"; fi
-rm cvcv_net.txt
-python domainwhois.py -t co -l twoletters.txt -o ll_co.txt
-if [ -s ll_co.txt ]; then cat ll_co.txt | mail -s "LL.CO" "ralobba@gmail.com"; fi
-rm ll_co.txt
-python domainwhois.py -t co -l tla.txt -o lll_co.txt
-if [ -s lll_co.txt ]; then cat lll_co.txt | mail -s "LLL.CO" "ralobba@gmail.com"; fi
-rm lll_co.txt
-python domainwhois.py -t co -l numList.txt -o num_co.txt
-if [ -s num_co.txt ]; then cat num_co.txt | mail -s "NNNN.CO" "ralobba@gmail.com"; fi
-rm num_co.txt
-python domainwhois.py -t co -l fourLetter.txt -o llll_co.txt
-if [ -s llll_co.txt ]; then cat llll_co.txt | mail -s "LLLL.CO" "ralobba@gmail.com"; fi
-rm llll_co.txt
-python domainwhois.py -t co -l five_letter.txt -o lllll_co.txt
-if [ -s lllll_co.txt ]; then cat lllll_co.txt | mail -s "LLLLL.CO" "ralobba@gmail.com"; fi
-rm lllll_co.txt
-python domainwhois.py -t co -l cvcv.txt -o cvcv_co.txt
-if [ -s cvcv_co.txt ]; then cat cvcv_co.txt | mail -s "CVCV.CO" "ralobba@gmail.com"; fi
-rm cvcv_co.txt
+python domainwhois.py -t net -l cccc.txt -o cccc_net.txt
+if [ -s cccc_net.txt ]; then cat cccc_net.txt | mail -s "CCCC.NET" "ralobba@gmail.com"; fi
+rm cccc_net.txt
+python domainwhois.py -t com -l 6to10.txt -o 6to10_com.txt
+if [ -s 6to10_com.txt ]; then cat 6to10_com.txt | mail -s "6to10.COM" "ralobba@gmail.com"; fi
+rm 6to10_com.txt

@@ -1,1 +1,1 @@
-python buyDomain.py -d akx.net
+python buyDomain.py -d salt.co
