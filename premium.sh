@@ -20,6 +20,9 @@ rm llll_com.txt
 python domainwhois.py -t com -l fiveletterconsonants.txt -o ccccc_com.txt
 if [ -s ccccc_com.txt ]; then cat ccccc_com.txt | mail -s "CCCCC.COM" "ralobba@gmail.com"; fi
 rm ccccc_com.txt
+python domainwhois.py -t com -l pinyin_consonants.txt -o ppppp_com.txt
+if [ -s ppppp_com.txt ]; then cat ppppp_com.txt | mail -s "PPPPP.COM" "ralobba@gmail.com"; fi
+rm ppppp_com.txt
 python domainwhois.py -t com -l five_letter.txt -o lllll_com.txt
 if [ -s lllll_com.txt ]; then cat lllll_com.txt | mail -s "LLLLL.COM" "ralobba@gmail.com"; fi
 rm lllll_com.txt
