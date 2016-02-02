@@ -5,18 +5,9 @@ rm chinese_names_com.txt
 python domainwhois.py -t com -l female_chinese_names.txt -o female_chinese_names_com.txt
 if [ -s female_chinese_names_com.txt ]; then cat female_chinese_names_com.txt | mail -s "FEMALECHINESENAMES.COM" "ralobba@gmail.com"; fi
 rm female_chinese_names_com.txt
-python domainwhois.py -t com -l twoletters.txt -o ll_com.txt
-if [ -s ll_com.txt ]; then cat ll_com.txt | mail -s "LL.COM" "ralobba@gmail.com"; fi
-rm ll_com.txt
-python domainwhois.py -t com -l tla.txt -o lll_com.txt
-if [ -s lll_com.txt ]; then cat lll_com.txt | mail -s "LLL.COM" "ralobba@gmail.com"; fi
-rm lll_com.txt
 python domainwhois.py -t com -l numList.txt -o num_com.txt
 if [ -s num_com.txt ]; then cat num_com.txt | mail -s "NNNN.COM" "ralobba@gmail.com"; fi
 rm num_com.txt
-python domainwhois.py -t com -l fourLetter.txt -o llll_com.txt
-if [ -s llll_com.txt ]; then cat llll_com.txt | mail -s "LLLL.COM" "ralobba@gmail.com"; fi
-rm llll_com.txt
 python domainwhois.py -t com -l fiveletterconsonants.txt -o ccccc_com.txt
 if [ -s ccccc_com.txt ]; then cat ccccc_com.txt | mail -s "CCCCC.COM" "ralobba@gmail.com"; fi
 rm ccccc_com.txt
